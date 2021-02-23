@@ -3,9 +3,7 @@
 #include <string>
 using namespace std;
 
-/**
- * Definition for binary tree
-*/
+// Definition for binary tree
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -19,27 +17,27 @@ public:
         int vlen = vin.size();
         if(vlen == 0) 
             return NULL;
-        vector<int> vin_left, vin_right, pre_left, pre_right;
-        TreeNode* head = new TreeNode(pre[0]);
+        vector<int> vin_left, vin_right, pre_left, pre_right;   //分别存放前序遍历和中序遍历的左右子树
+        TreeNode* head = new TreeNode(pre[0]);       //创建根节点，为根节点分配空间
         int gen = 0;
         for(int i = 0; i < vlen; i++){
             if(pre[0] == vin[i]){
-                gen = i;
+                gen = i;           //找到中序遍历中的根节点（前序遍历的第一个）
                 break;
             }
         }
         
-        for (int i = 0; i < gen; i++)
+        for (int i = 0; i < gen; i++)           //用于递归的左子树
         {
-            pre_left.push_back(pre[i+1]);
-            vin_left.push_back(vin[i]);
+            pre_left.push_back(pre[i+1]);       //前序遍历的[1,gen]  (第一个是根节点)
+            vin_left.push_back(vin[i]);         //中序遍历的[0,gen-1]
         }
-        for (int i = gen+1; i < vlen; i++)
+        for (int i = gen+1; i < vlen; i++)      //用于递归的右子树
         {
-            pre_right.push_back(pre[i]);
-            vin_right.push_back(vin[i]);
+            pre_right.push_back(pre[i]);        //前序遍历的[gen+1,len-1]  
+            vin_right.push_back(vin[i]);        //中序遍历的[gen+1,len-1]
         }
-        head->left = reConstructBinaryTree(pre_left,vin_left);
+        head->left = reConstructBinaryTree(pre_left,vin_left);     //递归
         head->right = reConstructBinaryTree(pre_right,vin_right);
         return head;
     }
