@@ -39,8 +39,17 @@ public:
         }
         head->left = reConstructBinaryTree(pre_left,vin_left);     //递归
         head->right = reConstructBinaryTree(pre_right,vin_right);
+        head->val = pre[0];
         return head;
     }
 };
 
+int main(int argc, char const *argv[])
+{
+    class Solution solu;
+    vector<int> pre = {1,2,4,7,3,5,6,8};
+    vector<int> vin = {4,7,2,1,5,3,8,6};
+    TreeNode* t =  solu.reConstructBinaryTree(pre, vin);
+    return 0;
+}
 
