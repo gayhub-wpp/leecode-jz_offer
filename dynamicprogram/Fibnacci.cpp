@@ -26,7 +26,7 @@ int Fib2(int number){
         return dp2[number] = Fib1(number-1)+Fib1(number-2);
 }
 
-// 动态规划，优化递归栈空间（迭代） 注意这里下标和前面不一样，第一位多一个0
+// 动态规划，优化递归栈空间（迭代）
 // 时间复杂度O(n),空间复杂度O(n)
 int Fib3(int number){
     if (number <= 0)
