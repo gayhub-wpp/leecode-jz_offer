@@ -21,14 +21,14 @@ int jumpFloorI(int number) {
         dp[i] = sum + 1 ;    //dp[i]=f(n-1)+……+f(1)+1
         sum += dp[i];        //sum = f(n-1)+……+f(1)
     }
-    return sum+1;
+    return dp[number];
 }
 
 int main(int argc, char const *argv[])
 {
     for (int i = 1; i <= 10; i++)
     {
-        cout << jumpFloorII(i) << " ";
+        cout << jumpFloorI(i) << " ";
     }
     return 0;
 }
