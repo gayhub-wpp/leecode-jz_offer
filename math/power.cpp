@@ -53,6 +53,7 @@ double Power3(double base, int exponent) {
     return ret;
 }
 
+// 
 // template <class T,class Integer, class MonoidOperation>
 // T power_this(T x, Integer n, MonoidOperation op){ // 可以看成求pow(x, n)
 //     if (n == 0)
