@@ -13,6 +13,7 @@ struct TreeNode {
 
 class Solution {
 public:
+// 给出前序中序，构建二叉树
     TreeNode* reConstructBinaryTree(vector<int> pre,vector<int> vin) {
         int vlen = vin.size();
         if(vlen == 0) 
