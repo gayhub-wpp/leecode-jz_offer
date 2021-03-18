@@ -40,8 +40,6 @@ int main(int argc, char const *argv[])
 {
     stack<int> s1;
     stack<int> s2;
-
-    
     Solution solu;
     solu.s = s1;
     solu.smin = s2;
