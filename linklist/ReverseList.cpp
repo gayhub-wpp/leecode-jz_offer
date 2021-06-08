@@ -7,7 +7,7 @@ struct ListNode {
 	ListNode(int x) :
 			val(x), next(NULL) {
 	}
-};
+}; 
 class Solution {
 public:
 // 原地反转，时间O(n),空间O(1)
